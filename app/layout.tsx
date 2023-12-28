@@ -10,7 +10,7 @@ import { PreloadResources } from './preload';
 export const metadata: Metadata = {
   metadataBase: new URL('https://timbytes.dev'),
   title: {
-    default: 'timbytes.dev',
+    default: 'Tim Bytes',
     template: '%s | timbytes.dev',
   },
   description: 'Developer, writer, and creator.',

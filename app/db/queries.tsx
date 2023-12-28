@@ -1,23 +1,15 @@
 'use server';
 
-import { auth, youtube } from '@googleapis/youtube';
+import { youtube } from '@googleapis/youtube';
 import { sql } from '@vercel/postgres';
 import {
   unstable_cache as cache,
   unstable_noStore as noStore,
 } from 'next/cache';
 
-let googleAuth = new auth.GoogleAuth({
-  credentials: {
-    client_email: process.env.GOOGLE_CLIENT_EMAIL,
-    private_key: process.env.GOOGLE_PRIVATE_KEY,
-  },
-  scopes: ['https://www.googleapis.com/auth/youtube.readonly'],
-});
-
 let yt = youtube({
   version: 'v3',
-  auth: googleAuth,
+  auth: process.env.YOUTUBE_API_KEY,
 });
 
 export async function getBlogViews() {
@@ -48,33 +40,33 @@ export async function getViewsCount() {
   return data.rows as { slug: string; count: number }[];
 }
 
-export const getLeeYouTubeSubs = cache(
+export const getPrimeYouTubeSubs = cache(
   async () => {
     let response = await yt.channels.list({
-      id: ['UCZMli3czZnd1uoc1ShTouQw'],
+      id: ['UC8ENHE5xdFSwx71u3fDH5Xw'],
       part: ['statistics'],
     });
 
     let channel = response.data.items![0];
     return Number(channel?.statistics?.subscriberCount).toLocaleString();
   },
-  ['leerob-youtube-subs'],
+  ['primeagen-youtube-subs'],
   {
     revalidate: 3600,
   }
 );
 
-export const getVercelYouTubeSubs = cache(
+export const getTjYouTubeSubs = cache(
   async () => {
     let response = await yt.channels.list({
-      id: ['UCLq8gNoee7oXM7MvTdjyQvA'],
+      id: ['UCd3dNckv1Za2coSaHGHl5aA'],
       part: ['statistics'],
     });
 
     let channel = response.data.items![0];
     return Number(channel?.statistics?.subscriberCount).toLocaleString();
   },
-  ['vercel-youtube-subs'],
+  ['teej-dv-youtube-subs'],
   {
     revalidate: 3600,
   }
