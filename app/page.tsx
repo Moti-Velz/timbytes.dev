@@ -151,7 +151,7 @@ export default function Page() {
         </span>
         {` integrations and clever products to help people be more productive. `}
       </p>
-      <div className="columns-2 sm:columns-3 gap-4 my-8">
+      {/* <div className="columns-2 sm:columns-3 gap-4 my-8">
         <div className="relative h-40 mb-4">
           
         </div>
@@ -170,7 +170,7 @@ export default function Page() {
         <div className="relative h-80">
           
         </div>
-      </div>
+      </div> */}
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           I create educationnal content for developers, teaching them about infra, 
