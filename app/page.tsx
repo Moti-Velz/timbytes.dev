@@ -173,8 +173,8 @@ export default function Page() {
       </div> */}
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I create educationnal content for developers, teaching them about infra, 
-          backend and more. This comes in different forms: blog posts, tweets and 
+          I strive to create educationnal content for developers, putting out content about software architecture, 
+          application development and more. This comes in different forms: blog posts, tweets and 
           maybe some day conference talks. You can watch some of my favorite content 
           creators below.
         </p>
@@ -193,9 +193,8 @@ export default function Page() {
       </div>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-        Over the past 4 years, I've studied mechanical engineering, studied programming on my 
-        own and graduated college while working as a developer. This combination of academic 
-        and professionnal experience has given me a fair share of hot takes... but that's for later. 
+        Over the past 3 years, I've studied software engineering while working in 2 different companies as an individual contributor. 
+        This combination of academic and professionnal experience has given me a fair share of hot takes... but that's for later. 
         </p>
       </div>
       <div className="prose prose-neutral dark:prose-invert">
